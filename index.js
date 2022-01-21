@@ -19,8 +19,6 @@ const badges = {
 
     'The Unilicense' : "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"
 
-
-
 }
 
 inquirer 
@@ -77,6 +75,7 @@ inquirer
         linesArray.push( response.contribution );
         linesArray.push( response.testInstructions );
         linesArray.push( response.license );
+        linesArray.push( badges[response.license]);
         linesArray.push( response.username );
         linesArray.push( response.email );
         var readmeFile = "";
