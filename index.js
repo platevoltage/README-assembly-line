@@ -71,6 +71,13 @@ inquirer
 
         var linesArray = [`# ${response.title}`];
         linesArray.push( badges[response.license]);
+        linesArray.push( "## Contents");
+        linesArray.push( "- [Description](#description)" );
+        linesArray.push( "- [Usage](#usage)" );
+        linesArray.push( "- [License](#license)" );  
+        linesArray.push( "- [Contributing](#contributing)" );
+        linesArray.push( "- [Questions](#questions)" );
+        linesArray.push( "- [tests](#tests)" );
         linesArray.push( "## Description");
         linesArray.push( response.description );
         linesArray.push( "## Usage")
