@@ -65,19 +65,28 @@ inquirer
     .then((response) => {
         
         
-        
+        console.log(response);
         
         // fs.writeFile("data.json", JSON.stringify(response), (err) => err ? console.log(err) : console.log("success!")); 
 
         var linesArray = [`# ${response.title}`];
-        linesArray.push( `## ${response.description}` );
-        linesArray.push( response.usage );
-        linesArray.push( response.contribution );
-        linesArray.push( response.testInstructions );
-        linesArray.push( response.license );
         linesArray.push( badges[response.license]);
+        linesArray.push( "## Description");
+        linesArray.push( response.description );
+        linesArray.push( "## Usage")
+        linesArray.push( response.usage );
+        
+        
+        linesArray.push( "## License");
+        linesArray.push( response.license );
+      
+        linesArray.push( "## Contributing");
+        linesArray.push( response.contribution );
+        linesArray.push( "## Questions");
         linesArray.push( response.username );
         linesArray.push( response.email );
+        linesArray.push( "## Tests");
+        linesArray.push( response.testInstructions );
         var readmeFile = "";
         console.log(linesArray);
         for (line of linesArray) {
