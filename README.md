@@ -16,7 +16,7 @@ GNU GPL v3.0
 ## Contributing 
  
 ## Questions 
- 
- 
+[anti on GitHub](https://github.com/anti) 
+[anti@gmail.com](mailto:anti@gmail.com) 
 ## Tests 
  

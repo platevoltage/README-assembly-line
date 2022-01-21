@@ -90,8 +90,10 @@ inquirer
         linesArray.push( "## Contributing");
         linesArray.push( response.contribution );
         linesArray.push( "## Questions");
-        linesArray.push( response.username );
-        linesArray.push( response.email );
+        // https://github.com/
+        linesArray.push( `[${response.username} on GitHub](https://github.com/${response.username})` );
+
+        linesArray.push( `[${response.email}](mailto:${response.email})` );
         linesArray.push( "## Tests");
         linesArray.push( response.testInstructions );
         var readmeFile = "";
