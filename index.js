@@ -65,7 +65,7 @@ inquirer
     .then((response) => {
         
         
-        console.log(response);
+        
         
         // fs.writeFile("data.json", JSON.stringify(response), (err) => err ? console.log(err) : console.log("success!")); 
 
