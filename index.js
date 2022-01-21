@@ -43,8 +43,31 @@ inquirer
 
     ])
     .then((response) => {
-
+        
+        
         console.log(response);
-        fs.writeFile("data.json", JSON.stringify(response), (err) => err ? console.log(err) : console.log("success!")); 
+        
+        // fs.writeFile("data.json", JSON.stringify(response), (err) => err ? console.log(err) : console.log("success!")); 
+
+        var linesArray = [`# ${response.title}`];
+        linesArray.push( `## ${response.description}` );
+        linesArray.push( response.usage );
+        linesArray.push( response.contribution );
+        linesArray.push( response.testInstructions );
+        linesArray.push( response.license );
+        linesArray.push( response.username );
+        linesArray.push( response.email );
+
+        console.log(linesArray);
+
+
+
+
+
+
+
+        fs.writeFile("README.md", JSON.stringify(response), (err) => err ? console.log(err) : console.log("success"));
+
+
 
     });
