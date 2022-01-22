@@ -146,6 +146,14 @@ return markdown;
         fs.readdir("./output/", function(err, files) { 
             if (err) {
                 console.log(err);
+                fs.mkdir("./output", null, function(err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        writeFile(markdown);
+                    }
+                    
+                });
                 
             } else if (files.length) {
                 console.log(files);
