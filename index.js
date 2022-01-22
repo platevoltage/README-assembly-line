@@ -113,7 +113,7 @@ ${response.testInstructions}`
 
     
 
-        fs.writeFile("README.md", markdown, (err) => err ? console.log(err) : console.log("success"));
+        fs.writeFile("README.md", markdown, (err) => err ? console.log(err) : console.log("Sucessfully generated README.md"));
 
 
     });
