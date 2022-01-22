@@ -15,7 +15,14 @@ a readme.md generator using node.js
 
 ## Usage
 
-fsdfsdfsdfsd
+clone this repository (`git clone`)
+```
+cd
+npm install
+node rmal.js
+
+```
+
 ## Questions
 
 - [antieatingactivist on GitHub](https://github.com/antieatingactivist)
