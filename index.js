@@ -123,17 +123,23 @@ return markdown;
     });
 
     function renameOldFiles(files, markdown) {
-        fs.rename("./output/README.md", "./output/README-1.md", function(err) {
-            if (err) {
-                console.log(err)
+        for (var i = files.length-1; i >= 0; i--) {
+           
+            let x = `./output/README-${i}.md`;
+            if (i == 0) x = `./output/README.md`;
+            let y = `./output/README-${i+1}.md`;
 
-            }
-            else {
-                console.log("renamed files");
-                writeFile(markdown);
-            }
-        }); 
-    
+            fs.rename(x,y, function(err) {
+                if (err) {
+                    console.log(err)
+
+                }
+                else {
+                    console.log("renamed files");
+                    writeFile(markdown);
+                }
+            }); 
+        }
     }
 
     function readDirectory(markdown) {
