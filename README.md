@@ -1,9 +1,9 @@
-# fsdfsdfsdfsd
+# README-assembly-line
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-fsdfsdfsdfsd
+a readme.md generator using node.js
 
 ## Contents
 - [Description](#description)
@@ -18,7 +18,7 @@ fsdfsdfsdfsd
 fsdfsdfsdfsd
 ## Questions
 
-- [fsdfsdfsdfsd on GitHub](https://github.com/fsdfsdfsdfsd)
+- [antieatingactivist on GitHub](https://github.com/antieatingactivist)
 - [fsdfsdfsd](mailto:fsdfsdfsd)
 ## License
 
