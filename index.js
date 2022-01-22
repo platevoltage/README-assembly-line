@@ -64,55 +64,37 @@ inquirer
     ])
     .then((response) => {
         
-        
-        console.log(response);
-        
-        // fs.writeFile("data.json", JSON.stringify(response), (err) => err ? console.log(err) : console.log("success!")); 
+        var markdown = //readme outline below
+`# ${response.title}
+${badges[response.license]}
+## Contents
+- [Description](#description)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
+- [Tests](#tests)
+## Description
+${response.description}
+## Usage
+${response.usage}
+## License
+${response.license}
+## Contributing
+${response.contribution}
+## Questions
+- [${response.username} on GitHub](https://github.com/${response.username})
+- [${response.email}](mailto:${response.email})
+## Tests
+${response.testInstructions}`
 
-        var linesArray = [`# ${response.title}`];
-        linesArray.push( badges[response.license]);
-        linesArray.push( "## Contents");
-        linesArray.push( "- [Description](#description)" );
-        linesArray.push( "- [Usage](#usage)" );
-        linesArray.push( "- [License](#license)" );  
-        linesArray.push( "- [Contributing](#contributing)" );
-        linesArray.push( "- [Questions](#questions)" );
-        linesArray.push( "- [tests](#tests)" );
-        linesArray.push( "## Description");
-        linesArray.push( response.description );
-        linesArray.push( "## Usage")
-        linesArray.push( response.usage );
-        
-        
-        linesArray.push( "## License");
-        linesArray.push( response.license );
-      
-        linesArray.push( "## Contributing");
-        linesArray.push( response.contribution );
-        linesArray.push( "## Questions");
-        // https://github.com/
-        linesArray.push( `[${response.username} on GitHub](https://github.com/${response.username})` );
+//--------------------------------------------------
+       
+ 
 
-        linesArray.push( `[${response.email}](mailto:${response.email})` );
-        linesArray.push( "## Tests");
-        linesArray.push( response.testInstructions );
-        var readmeFile = "";
-        console.log(linesArray);
-        for (line of linesArray) {
-            readmeFile += `${line} \n`;
-        }
+    
 
-        console.log(readmeFile);
-
-        fs.writeFile("README.md", readmeFile, (err) => err ? console.log(err) : console.log("success"));
-
-
-
-      
-            // fs.appendFile("README.md", readmeFile, (err) => err ? console.log(err) : console.log("success"));
-        
-        
-
+        fs.writeFile("README.md", markdown, (err) => err ? console.log(err) : console.log("success"));
 
 
     });
