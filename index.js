@@ -63,6 +63,13 @@ inquirer
 
     ])
     .then((response) => {
+        let license = response.license;
+        if (license.split(' ')[0] != "The") {
+            license = `The ${license}`;
+        } 
+        if (!(license.includes("license") || license.includes("License"))) {
+            license = `${license} license`;
+        }
         
         var markdown = //readme outline below
 `# ${response.title}
@@ -79,7 +86,7 @@ ${response.description}
 ## Usage
 ${response.usage}
 ## License
-${response.license}
+This project is licensed under ${license}
 ## Contributing
 ${response.contribution}
 ## Questions

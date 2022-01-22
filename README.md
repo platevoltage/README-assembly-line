@@ -1,5 +1,5 @@
 # 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 ## Contents
 - [Description](#description)
 - [Usage](#usage)
@@ -12,7 +12,7 @@
 ## Usage
 
 ## License
-GNU GPL v3.0
+This project is licensed under The Boost Software license
 ## Contributing
 
 ## Questions
