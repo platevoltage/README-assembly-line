@@ -63,6 +63,7 @@ inquirer
 
     ])
     .then((response) => {
+
         let license = response.license;
         if (license.split(' ')[0] != "The") {
             license = `The ${license}`;
@@ -71,9 +72,16 @@ inquirer
             license = `${license} license`;
         }
         
+
+
         var markdown = //readme outline below
 `# ${response.title}
+
 ${badges[response.license]}
+
+## Description
+${response.description}
+
 ## Contents
 - [Description](#description)
 - [Usage](#usage)
@@ -81,18 +89,22 @@ ${badges[response.license]}
 - [Contributing](#contributing)
 - [Questions](#questions)
 - [Tests](#tests)
-## Description
-${response.description}
+
 ## Usage
+
 ${response.usage}
-## License
-This project is licensed under ${license}
-## Contributing
-${response.contribution}
 ## Questions
+
 - [${response.username} on GitHub](https://github.com/${response.username})
 - [${response.email}](mailto:${response.email})
+## License
+
+This project is licensed under ${license}
+## Contributing
+
+${response.contribution}
 ## Tests
+
 ${response.testInstructions}`
 
 //--------------------------------------------------
