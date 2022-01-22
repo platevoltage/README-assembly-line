@@ -107,13 +107,50 @@ ${response.contribution}
 
 ${response.testInstructions}`
 
+
+return markdown;
+
 //--------------------------------------------------
-       
+        })
+        .then((markdown) => {
  
 
-    
+             readDirectory(markdown);
+            //writeFile(markdown);
 
-        fs.writeFile("./output/README.md", markdown, (err) => err ? console.log(err) : console.log("Sucessfully generated README.md"));
 
 
     });
+
+    function renameOldFiles(files, markdown) {
+        fs.rename("./output/README.md", "./output/README-1.md", function(err) {
+            if (err) {
+                console.log(err)
+
+            }
+            else {
+                console.log("renamed files");
+                writeFile(markdown);
+            }
+        }); 
+    
+    }
+
+    function readDirectory(markdown) {
+        fs.readdir("./output/", function(err, files) { 
+            if (err) {
+                console.log(err);
+                
+            } else if (files.length) {
+                console.log(files);
+                renameOldFiles(files, markdown);
+            } else {
+                writeFile(markdown);
+            }
+        });
+        
+    }
+
+    function writeFile(markdown) {
+        fs.writeFile("./output/README.md", markdown, (err) => err ? console.log(err) : console.log("Sucessfully generated README.md"));
+    }
