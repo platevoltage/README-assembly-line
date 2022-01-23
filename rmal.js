@@ -21,6 +21,7 @@ const badges = {
 
 }
 
+console.log("\x1b[1m\x1b[32m%s\x1b[0m", "\n  Welcome to the README assembly line! Answer the questions below.\n");
 inquirer 
     .prompt([
         {
@@ -112,15 +113,7 @@ return markdown;
 
 //--------------------------------------------------
         })
-        .then((markdown) => {
- 
-
-             readDirectory(markdown);
-            //writeFile(markdown);
-
-
-
-    });
+        .then((markdown) => readDirectory(markdown));
 
     function renameOldFiles(files, markdown) {
         for (var i = files.length-1; i >= 0; i--) {
@@ -131,12 +124,14 @@ return markdown;
 
             fs.rename(x,y, function(err) {
                 if (err) {
-                    console.log(err)
+                    console.log(err);
 
                 }
                 else {
-                    console.log("renamed files");
-                    writeFile(markdown);
+                    console.log(`renamed ${x} to ${y}`);
+                    if (i == -1) {
+                        writeFile(markdown);
+                    }
                 }
             }); 
         }
@@ -156,7 +151,7 @@ return markdown;
                 });
                 
             } else if (files.length) {
-                console.log(files);
+                console.log("\x1b[1m\x1b[32m%s\x1b[0m", "\n   README.md already exists. It will be renamed to README-1.md to make room for the new file.\n");
                 renameOldFiles(files, markdown);
             } else {
                 writeFile(markdown);
@@ -166,5 +161,5 @@ return markdown;
     }
 
     function writeFile(markdown) {
-        fs.writeFile("./output/README.md", markdown, (err) => err ? console.log(err) : console.log("Sucessfully generated README.md"));
+        fs.writeFile("./output/README.md", markdown, (err) => err ? console.log(err) : console.log("Successfully generated README.md"));
     }
