@@ -116,21 +116,29 @@ return markdown;
         .then((markdown) => readDirectory(markdown));
 
     function renameOldFiles(files, markdown) {
-        for (var i = files.length-1; i >= 0; i--) {
+        let i = files.length;
+        // for (var i = files.length-1; i >= 0; i--) {
+        renameLastFile();
+        function renameLastFile() {
            
             let x = `./output/README-${i}.md`;
-            if (i == 0) x = `./output/README.md`;
+            if (x == "./output/README-0.md") x = `./output/README.md`;
             let y = `./output/README-${i+1}.md`;
 
             fs.rename(x,y, function(err) {
                 if (err) {
                     console.log(err);
-
+                    i--;
+                    renameLastFile();
                 }
                 else {
                     console.log(`renamed ${x} to ${y}`);
-                    if (i == -1) {
+                    if (i == 0) {
                         writeFile(markdown);
+                    }
+                    else {
+                        i--;
+                        renameLastFile();
                     }
                 }
             }); 
@@ -150,7 +158,7 @@ return markdown;
                     
                 });
                 
-            } else if (files.length) {
+            } else if (files.includes("README.md")) {
                 console.log("\x1b[1m\x1b[32m%s\x1b[0m", "\n   README.md already exists. It will be renamed to README-1.md to make room for the new file.\n");
                 renameOldFiles(files, markdown);
             } else {
