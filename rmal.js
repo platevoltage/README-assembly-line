@@ -65,6 +65,7 @@ inquirer
     ])
     .then((response) => {
 
+        //parses the license to read as a proper sentence
         let license = response.license;
         if (license.split(' ')[0] != "The") {
             license = `The ${license}`;
@@ -117,7 +118,7 @@ return markdown;
 
     function renameOldFiles(files, markdown) {
         let i = files.length;
-        // for (var i = files.length-1; i >= 0; i--) {
+
         renameLastFile();
         function renameLastFile() {
            
@@ -148,7 +149,7 @@ return markdown;
     function readDirectory(markdown) {
         fs.readdir("./output/", function(err, files) { 
             if (err) {
-                console.log(err);
+                console.log("\x1b[1m\x1b[32m%s\x1b[0m", "\n -- creating 'output/' directory");
                 fs.mkdir("./output", null, function(err) {
                     if (err) {
                         console.log(err);
