@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-a readme.md generator using node.js
+a readme.md generator using node.js. Using inquirer.js, you are prompted to imput all of the information to assemble a readme in markdown format ready for GitHub.
 
 
 ## Usage
@@ -30,6 +30,9 @@ Ubuntu/Debian `apt-get install nodejs`
 - execute script using node
 
   `node rmal.js`
+
+
+<img width="693" alt="Screen Shot 2022-01-23 at 11 37 11 PM" src="https://user-images.githubusercontent.com/1414728/150740919-a672b1f2-be18-414a-b58e-085f3eb0b1eb.png">
 
 ## Built With
 
