@@ -45,7 +45,7 @@ Ubuntu/Debian `apt-get install nodejs`
 
 Garrett Corbin
 
-- [https://github.com/antieatingactivist/](https://github.com/)
+- [https://github.com/platevoltage/](https://github.com/)
 - [https://www.linkedin.com/in/garrett-corbin-7a7777227/](https://www.linkedin.com/)
 
 ## License
